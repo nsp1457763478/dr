@@ -1,16 +1,10 @@
 package com.java.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
-
 /**
- * author:孙琪
+ * author:snp
  * date:2019/4/28
- * time:10:18
+ * time:19:12
  */
-@Entity
-@Table(name = "order_car")//购物车表
 public class OrderCar {
     private Integer cid;//购物车订单编号
     private String typeName;//类型
@@ -19,9 +13,6 @@ public class OrderCar {
     private Double price;//单价
     private Integer amount;//数量（可修改）
     private Double sumPrice;//总价
-    @Id
-    @GeneratedValue(generator = "_native")
-    @GenericGenerator(name = "_native", strategy = "native")
     public Integer getCid() {
         return cid;
     }
@@ -29,7 +20,6 @@ public class OrderCar {
     public void setCid(Integer cid) {
         this.cid = cid;
     }
-    @Column(name = "type_name")
     public String getTypeName() {
         return typeName;
     }
@@ -45,7 +35,6 @@ public class OrderCar {
     public void setGid(Integer gid) {
         this.gid = gid;
     }
-    @Column(name = "goods_name")
     public String getGoodsName() {
         return goodsName;
     }
@@ -69,7 +58,6 @@ public class OrderCar {
     public void setAmount(Integer amount) {
         this.amount = amount;
     }
-    @Column(name = "sum_price")
     public Double getSumPrice() {
         return price*amount;
     }
